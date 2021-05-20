@@ -1,4 +1,4 @@
-function(sequelize, DataTypes) {
+function createGame(sequelize, DataTypes) {
     return sequelize.define('game', {
         title: {
             type: DataTypes.STRING(25),
@@ -36,3 +36,5 @@ function(sequelize, DataTypes) {
         }
     })
 }
+
+module.exports = createGame;

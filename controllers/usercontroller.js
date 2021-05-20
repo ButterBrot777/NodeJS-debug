@@ -1,8 +1,10 @@
-var router = Router();
-var bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
+const express = require('express');
+const router = express.Router(); // fixed express.Router()
 
-var User = require('../db').import('../models/user');
+const bcrypt = require('bcryptjs'); // bycript
+const jwt = require('jsonwebtoken');
+
+const User = require('../models/user'); // import is redundant
 
 router.post('/signup', (req, res) => {
     User.create({
